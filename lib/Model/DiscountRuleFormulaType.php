@@ -49,6 +49,8 @@ class DiscountRuleFormulaType
 
     public const COST_RANGE = 'CostRange';
 
+    public const PARAMETERS_MATRIX = 'ParametersMatrix';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -58,7 +60,8 @@ class DiscountRuleFormulaType
         return [
             self::STANDARD,
             self::QUANTITY_RANGE,
-            self::COST_RANGE
+            self::COST_RANGE,
+            self::PARAMETERS_MATRIX
         ];
     }
 }

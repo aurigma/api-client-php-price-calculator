@@ -47,6 +47,8 @@ class PriceRuleFormulaType
 
     public const QUANTITY_RANGE = 'QuantityRange';
 
+    public const PARAMETERS_MATRIX = 'ParametersMatrix';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -55,7 +57,8 @@ class PriceRuleFormulaType
     {
         return [
             self::STANDARD,
-            self::QUANTITY_RANGE
+            self::QUANTITY_RANGE,
+            self::PARAMETERS_MATRIX
         ];
     }
 }

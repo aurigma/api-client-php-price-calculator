@@ -31,6 +31,9 @@ docs/Model/DiscountRuleFormulaExpressionUpdateModel.md
 docs/Model/DiscountRuleFormulaType.md
 docs/Model/DiscountRuleFormulaUpdateModel.md
 docs/Model/DiscountRuleFormulaUpdateModelExpression.md
+docs/Model/DiscountRuleParameterRangeCreationModel.md
+docs/Model/DiscountRuleParameterRangeDto.md
+docs/Model/DiscountRuleParameterRangeUpdateModel.md
 docs/Model/DiscountRuleUpdateModel.md
 docs/Model/LineItemCostCalculationModel.md
 docs/Model/LineItemCostCalculationModelProductSpecifier.md
@@ -48,6 +51,8 @@ docs/Model/PriceRuleFormulaCreationModel.md
 docs/Model/PriceRuleFormulaDto.md
 docs/Model/PriceRuleFormulaType.md
 docs/Model/PriceRuleFormulaUpdateModel.md
+docs/Model/PriceRuleParameterRangeCreationModel.md
+docs/Model/PriceRuleParameterRangeDto.md
 docs/Model/PriceRuleUpdateModel.md
 docs/Model/ProblemDetails.md
 docs/Model/ProductSpecifyModel.md
@@ -88,6 +93,9 @@ lib/Model/DiscountRuleFormulaExpressionUpdateModel.php
 lib/Model/DiscountRuleFormulaType.php
 lib/Model/DiscountRuleFormulaUpdateModel.php
 lib/Model/DiscountRuleFormulaUpdateModelExpression.php
+lib/Model/DiscountRuleParameterRangeCreationModel.php
+lib/Model/DiscountRuleParameterRangeDto.php
+lib/Model/DiscountRuleParameterRangeUpdateModel.php
 lib/Model/DiscountRuleUpdateModel.php
 lib/Model/LineItemCostCalculationModel.php
 lib/Model/LineItemCostCalculationModelProductSpecifier.php
@@ -106,6 +114,8 @@ lib/Model/PriceRuleFormulaCreationModel.php
 lib/Model/PriceRuleFormulaDto.php
 lib/Model/PriceRuleFormulaType.php
 lib/Model/PriceRuleFormulaUpdateModel.php
+lib/Model/PriceRuleParameterRangeCreationModel.php
+lib/Model/PriceRuleParameterRangeDto.php
 lib/Model/PriceRuleUpdateModel.php
 lib/Model/ProblemDetails.php
 lib/Model/ProductSpecifyModel.php

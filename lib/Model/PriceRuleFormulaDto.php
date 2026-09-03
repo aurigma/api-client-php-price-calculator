@@ -61,6 +61,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'string',
         'quantity_from' => 'int',
         'quantity_to' => 'int',
+        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\PriceRuleParameterRangeDto[]',
         'expression' => 'string'
     ];
 
@@ -75,6 +76,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'uuid',
         'quantity_from' => 'int32',
         'quantity_to' => 'int32',
+        'parameter_ranges' => null,
         'expression' => null
     ];
 
@@ -87,6 +89,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => false,
         'quantity_from' => true,
         'quantity_to' => true,
+        'parameter_ranges' => true,
         'expression' => true
     ];
 
@@ -179,6 +182,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'id',
         'quantity_from' => 'quantityFrom',
         'quantity_to' => 'quantityTo',
+        'parameter_ranges' => 'parameterRanges',
         'expression' => 'expression'
     ];
 
@@ -191,6 +195,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'setId',
         'quantity_from' => 'setQuantityFrom',
         'quantity_to' => 'setQuantityTo',
+        'parameter_ranges' => 'setParameterRanges',
         'expression' => 'setExpression'
     ];
 
@@ -203,6 +208,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         'id' => 'getId',
         'quantity_from' => 'getQuantityFrom',
         'quantity_to' => 'getQuantityTo',
+        'parameter_ranges' => 'getParameterRanges',
         'expression' => 'getExpression'
     ];
 
@@ -266,6 +272,7 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('quantity_from', $data ?? [], null);
         $this->setIfExists('quantity_to', $data ?? [], null);
+        $this->setIfExists('parameter_ranges', $data ?? [], null);
         $this->setIfExists('expression', $data ?? [], null);
     }
 
@@ -402,6 +409,40 @@ class PriceRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['quantity_to'] = $quantity_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets parameter_ranges
+     *
+     * @return \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeDto[]|null
+     */
+    public function getParameterRanges()
+    {
+        return $this->container['parameter_ranges'];
+    }
+
+    /**
+     * Sets parameter_ranges
+     *
+     * @param \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeDto[]|null $parameter_ranges Parameters ranges description. Optional.
+     *
+     * @return self
+     */
+    public function setParameterRanges($parameter_ranges)
+    {
+        if (is_null($parameter_ranges)) {
+            array_push($this->openAPINullablesSetToNull, 'parameter_ranges');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parameter_ranges', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['parameter_ranges'] = $parameter_ranges;
 
         return $this;
     }

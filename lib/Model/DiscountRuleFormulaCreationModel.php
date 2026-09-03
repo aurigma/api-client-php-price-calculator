@@ -59,6 +59,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'expression' => '\Aurigma\PriceCalculator\Model\DiscountRuleFormulaCreationModelExpression',
+        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeCreationModel[]',
         'quantity_from' => 'int',
         'quantity_to' => 'int',
         'cost_from' => 'float',
@@ -74,6 +75,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'expression' => null,
+        'parameter_ranges' => null,
         'quantity_from' => 'int32',
         'quantity_to' => 'int32',
         'cost_from' => 'double',
@@ -87,6 +89,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
       */
     protected static array $openAPINullables = [
         'expression' => true,
+        'parameter_ranges' => true,
         'quantity_from' => true,
         'quantity_to' => true,
         'cost_from' => true,
@@ -180,6 +183,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'expression' => 'expression',
+        'parameter_ranges' => 'parameterRanges',
         'quantity_from' => 'quantityFrom',
         'quantity_to' => 'quantityTo',
         'cost_from' => 'costFrom',
@@ -193,6 +197,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'expression' => 'setExpression',
+        'parameter_ranges' => 'setParameterRanges',
         'quantity_from' => 'setQuantityFrom',
         'quantity_to' => 'setQuantityTo',
         'cost_from' => 'setCostFrom',
@@ -206,6 +211,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'expression' => 'getExpression',
+        'parameter_ranges' => 'getParameterRanges',
         'quantity_from' => 'getQuantityFrom',
         'quantity_to' => 'getQuantityTo',
         'cost_from' => 'getCostFrom',
@@ -270,6 +276,7 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
     public function __construct(array $data = null)
     {
         $this->setIfExists('expression', $data ?? [], null);
+        $this->setIfExists('parameter_ranges', $data ?? [], null);
         $this->setIfExists('quantity_from', $data ?? [], null);
         $this->setIfExists('quantity_to', $data ?? [], null);
         $this->setIfExists('cost_from', $data ?? [], null);
@@ -348,6 +355,40 @@ class DiscountRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['expression'] = $expression;
+
+        return $this;
+    }
+
+    /**
+     * Gets parameter_ranges
+     *
+     * @return \Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeCreationModel[]|null
+     */
+    public function getParameterRanges()
+    {
+        return $this->container['parameter_ranges'];
+    }
+
+    /**
+     * Sets parameter_ranges
+     *
+     * @param \Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeCreationModel[]|null $parameter_ranges Parameters range list.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.DiscountRuleFormulaType.ParametersMatrix type of formula.
+     *
+     * @return self
+     */
+    public function setParameterRanges($parameter_ranges)
+    {
+        if (is_null($parameter_ranges)) {
+            array_push($this->openAPINullablesSetToNull, 'parameter_ranges');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parameter_ranges', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['parameter_ranges'] = $parameter_ranges;
 
         return $this;
     }

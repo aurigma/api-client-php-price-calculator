@@ -60,6 +60,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'quantity_from' => 'int',
         'quantity_to' => 'int',
+        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]',
         'expression' => 'string'
     ];
 
@@ -73,6 +74,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'quantity_from' => 'int32',
         'quantity_to' => 'int32',
+        'parameter_ranges' => null,
         'expression' => null
     ];
 
@@ -84,6 +86,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static array $openAPINullables = [
         'quantity_from' => true,
         'quantity_to' => true,
+        'parameter_ranges' => true,
         'expression' => true
     ];
 
@@ -175,6 +178,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static $attributeMap = [
         'quantity_from' => 'quantityFrom',
         'quantity_to' => 'quantityTo',
+        'parameter_ranges' => 'parameterRanges',
         'expression' => 'expression'
     ];
 
@@ -186,6 +190,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'quantity_from' => 'setQuantityFrom',
         'quantity_to' => 'setQuantityTo',
+        'parameter_ranges' => 'setParameterRanges',
         'expression' => 'setExpression'
     ];
 
@@ -197,6 +202,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'quantity_from' => 'getQuantityFrom',
         'quantity_to' => 'getQuantityTo',
+        'parameter_ranges' => 'getParameterRanges',
         'expression' => 'getExpression'
     ];
 
@@ -259,6 +265,7 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
     {
         $this->setIfExists('quantity_from', $data ?? [], null);
         $this->setIfExists('quantity_to', $data ?? [], null);
+        $this->setIfExists('parameter_ranges', $data ?? [], null);
         $this->setIfExists('expression', $data ?? [], null);
     }
 
@@ -368,6 +375,40 @@ class PriceRuleFormulaCreationModel implements ModelInterface, ArrayAccess, \Jso
             }
         }
         $this->container['quantity_to'] = $quantity_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets parameter_ranges
+     *
+     * @return \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]|null
+     */
+    public function getParameterRanges()
+    {
+        return $this->container['parameter_ranges'];
+    }
+
+    /**
+     * Sets parameter_ranges
+     *
+     * @param \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]|null $parameter_ranges Parameters range list.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.PriceRuleFormulaType.ParametersMatrix type of formula.
+     *
+     * @return self
+     */
+    public function setParameterRanges($parameter_ranges)
+    {
+        if (is_null($parameter_ranges)) {
+            array_push($this->openAPINullablesSetToNull, 'parameter_ranges');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parameter_ranges', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['parameter_ranges'] = $parameter_ranges;
 
         return $this;
     }

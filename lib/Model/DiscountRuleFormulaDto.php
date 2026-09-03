@@ -60,6 +60,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'id' => 'string',
         'expression' => '\Aurigma\PriceCalculator\Model\DiscountRuleFormulaDtoExpression',
+        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeDto[]',
         'quantity_from' => 'int',
         'quantity_to' => 'int',
         'cost_from' => 'float',
@@ -76,6 +77,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'id' => 'uuid',
         'expression' => null,
+        'parameter_ranges' => null,
         'quantity_from' => 'int32',
         'quantity_to' => 'int32',
         'cost_from' => 'double',
@@ -90,6 +92,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'id' => false,
         'expression' => true,
+        'parameter_ranges' => true,
         'quantity_from' => true,
         'quantity_to' => true,
         'cost_from' => true,
@@ -184,6 +187,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'id' => 'id',
         'expression' => 'expression',
+        'parameter_ranges' => 'parameterRanges',
         'quantity_from' => 'quantityFrom',
         'quantity_to' => 'quantityTo',
         'cost_from' => 'costFrom',
@@ -198,6 +202,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'id' => 'setId',
         'expression' => 'setExpression',
+        'parameter_ranges' => 'setParameterRanges',
         'quantity_from' => 'setQuantityFrom',
         'quantity_to' => 'setQuantityTo',
         'cost_from' => 'setCostFrom',
@@ -212,6 +217,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'id' => 'getId',
         'expression' => 'getExpression',
+        'parameter_ranges' => 'getParameterRanges',
         'quantity_from' => 'getQuantityFrom',
         'quantity_to' => 'getQuantityTo',
         'cost_from' => 'getCostFrom',
@@ -277,6 +283,7 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('expression', $data ?? [], null);
+        $this->setIfExists('parameter_ranges', $data ?? [], null);
         $this->setIfExists('quantity_from', $data ?? [], null);
         $this->setIfExists('quantity_to', $data ?? [], null);
         $this->setIfExists('cost_from', $data ?? [], null);
@@ -382,6 +389,40 @@ class DiscountRuleFormulaDto implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['expression'] = $expression;
+
+        return $this;
+    }
+
+    /**
+     * Gets parameter_ranges
+     *
+     * @return \Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeDto[]|null
+     */
+    public function getParameterRanges()
+    {
+        return $this->container['parameter_ranges'];
+    }
+
+    /**
+     * Sets parameter_ranges
+     *
+     * @param \Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeDto[]|null $parameter_ranges Parameters ranges description. Optional.
+     *
+     * @return self
+     */
+    public function setParameterRanges($parameter_ranges)
+    {
+        if (is_null($parameter_ranges)) {
+            array_push($this->openAPINullablesSetToNull, 'parameter_ranges');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parameter_ranges', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['parameter_ranges'] = $parameter_ranges;
 
         return $this;
     }

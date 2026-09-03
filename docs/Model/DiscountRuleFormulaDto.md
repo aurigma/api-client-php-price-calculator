@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique identifier (primary key). | [optional]
 **expression** | [**\Aurigma\PriceCalculator\Model\DiscountRuleFormulaDtoExpression**](DiscountRuleFormulaDtoExpression.md) |  | [optional]
+**parameter_ranges** | [**\Aurigma\PriceCalculator\Model\DiscountRuleParameterRangeDto[]**](DiscountRuleParameterRangeDto.md) | Parameters ranges description. Optional. | [optional]
 **quantity_from** | **int** | Quantity \&quot;from\&quot;. Optional.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.DiscountRuleFormulaType.QuantityRange type of formula. | [optional]
 **quantity_to** | **int** | Quantity \&quot;to\&quot;. Optional.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.DiscountRuleFormulaType.QuantityRange type of formula. | [optional]
 **cost_from** | **float** | Cost \&quot;from\&quot;. Optional.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.DiscountRuleFormulaType.CostRange type of formula. | [optional]
