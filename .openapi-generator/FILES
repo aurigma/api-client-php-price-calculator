@@ -53,6 +53,7 @@ docs/Model/PriceRuleFormulaType.md
 docs/Model/PriceRuleFormulaUpdateModel.md
 docs/Model/PriceRuleParameterRangeCreationModel.md
 docs/Model/PriceRuleParameterRangeDto.md
+docs/Model/PriceRuleParameterRangeUpdateModel.md
 docs/Model/PriceRuleUpdateModel.md
 docs/Model/ProblemDetails.md
 docs/Model/ProductSpecifyModel.md
@@ -116,6 +117,7 @@ lib/Model/PriceRuleFormulaType.php
 lib/Model/PriceRuleFormulaUpdateModel.php
 lib/Model/PriceRuleParameterRangeCreationModel.php
 lib/Model/PriceRuleParameterRangeDto.php
+lib/Model/PriceRuleParameterRangeUpdateModel.php
 lib/Model/PriceRuleUpdateModel.php
 lib/Model/ProblemDetails.php
 lib/Model/ProductSpecifyModel.php

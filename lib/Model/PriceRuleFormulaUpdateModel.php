@@ -61,7 +61,7 @@ class PriceRuleFormulaUpdateModel implements ModelInterface, ArrayAccess, \JsonS
         'id' => 'string',
         'quantity_from' => 'int',
         'quantity_to' => 'int',
-        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]',
+        'parameter_ranges' => '\Aurigma\PriceCalculator\Model\PriceRuleParameterRangeUpdateModel[]',
         'expression' => 'string'
     ];
 
@@ -416,7 +416,7 @@ class PriceRuleFormulaUpdateModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets parameter_ranges
      *
-     * @return \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]|null
+     * @return \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeUpdateModel[]|null
      */
     public function getParameterRanges()
     {
@@ -426,7 +426,7 @@ class PriceRuleFormulaUpdateModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets parameter_ranges
      *
-     * @param \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeCreationModel[]|null $parameter_ranges Parameters range list.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.PriceRuleFormulaType.ParametersMatrix type of formula.
+     * @param \Aurigma\PriceCalculator\Model\PriceRuleParameterRangeUpdateModel[]|null $parameter_ranges Parameters range list.  Used for rules with Aurigma.PriceCalculator.WebApi.Enums.PriceRuleFormulaType.ParametersMatrix type of formula.
      *
      * @return self
      */
